@@ -1,0 +1,206 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+/* To use */
+
+/* font-family: 'League Spartan', sans-serif; */
+
+/* Colors */
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'League Spartan', sans-serif;
+    text-align: center;
+}
+
+html {
+    /* Setting up min and max width for the website per design notes */
+    min-width: 375px;
+    max-width: 1440px;
+    margin: 0 auto; /* Centering the content of the website */
+}
+
+body {
+    width: 90%; /* Creating natural padding of the body */
+    margin: auto; /* Centering the content of body */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
+    background-position: top, bottom;
+    background-repeat: no-repeat;
+}
+
+header {
+    margin-top: 4em; /* Margin on the top of the website, above header */
+}
+
+header h1 {
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    padding: 0 2em;
+}
+
+header p {
+    color: var(--dark-grayish-magenta);
+    font-weight: 400;
+    font-size: 1.05em;
+    line-height: 1.3em;
+    padding: 1em 1em;
+}
+
+
+.rating {
+    background-color: var(--light-grayish-magenta);
+    margin: 1em 0em;
+    width: 100%;
+    padding: 1em 3em;
+    border-radius: 10px;
+}
+
+.rating h2 {
+    color: var(--very-dark-magenta);
+    font-size: 1em;
+    padding-top: 0.5em;
+}
+
+.review {
+    background-color: var(--very-dark-magenta);
+    margin: 1em;
+    text-align: left;
+    border-radius: 5px;
+    padding: 1.8em;
+}
+
+.review img {
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 1em;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile h3 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.profile span {
+    color: var(--soft-pink);
+    font-weight: 400;
+    font-size: 1em;
+    padding-top: 0.3em;
+}
+
+
+.review p {
+    text-align: left;
+    margin-top: 1.2em;
+    color:var(--light-grayish-magenta);
+    font-weight: 300;
+    line-height: 1.3em;
+    font-size: 0.9em;
+}
+
+
+
+
+@media only screen and (min-width: 920px) {
+
+    body {
+        width: 80%;
+        background: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+        background-position: left top, right bottom;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 375px 375px;
+        gap: 20px;
+    }
+
+
+    header h1 {
+        font-size: 3em;
+        text-align: start;
+        padding: 0 150px 0 20px; 
+    }
+
+    header p {
+        text-align: start;
+        font-size: 1.2em;
+        padding-right: 60px;
+    }
+
+    .ratings {
+        display: grid;
+        width: 100%;
+    }
+
+    .rating {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+        width: 30em;
+        margin: 0.5em;
+    }
+    
+    .rate-1 {
+        justify-self: start;
+    }
+
+    .rate-2 {
+        justify-self: center;
+    }
+
+    .rate-3 {
+        justify-self: end;
+    }
+
+
+    .reviews {
+        display: flex;
+        grid-column: 1/3;
+        height: 100%;
+    }
+
+    .review {
+        width: 420px;
+        padding: 2em;
+        height: 14em;
+    }
+
+    .review.one {
+        align-self: top;
+    }
+
+    .review.two {
+        align-self: center;
+    }
+
+    .review.three {
+        align-self: end;
+    }
+
+
+}
